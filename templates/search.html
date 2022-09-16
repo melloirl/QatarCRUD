@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="../static/main.css">
+<body>
+   <div id = "table">
+    <table>
+        <thead>
+            <tr>
+                {% for header in headers %}           
+                    <th>
+                    {{header[0]}}
+                    </th>                  
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            
+                {% for result in results%}
+                    <tr>  
+                    {% for i in range(size)%}         
+                        <td>
+                        {{result[i]}}
+                        </td>
+                    {% endfor %}    
+                    </tr>         
+                {% endfor %}
+            
+        </tbody>
+    <table>
+   </div>
+   <script src="{{ url_for('static', filename='index.js') }}"></script>
+<body>
