@@ -1,13 +1,14 @@
 <link rel="stylesheet" href="../static/main.css">
 <body>
    <div id = "table">
+    <form>
     <table>
         <thead>
             <tr>
                 {% for header in headers %}           
                     <th>
                     {{header[0]}}
-                    </th>                  
+                    </th>                 
                 {% endfor %}
             </tr>
         </thead>
@@ -19,12 +20,20 @@
                         <td>
                         {{result[i]}}
                         </td>
-                    {% endfor %}    
+                    {% endfor %}
                     </tr>         
                 {% endfor %}
-            
+                    <tr>  
+                    {% for type in types%}         
+                        <td>
+                       <input type = {{ type }}> </button>
+                        </td>
+                    {% endfor %}
+                    </tr>         
         </tbody>
-    <table>
+    </table>
+    <button type = "submit">CRIAR</button>
+    </form>
    </div>
    <script src="{{ url_for('static', filename='index.js') }}"></script>
 <body>
